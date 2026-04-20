@@ -61,7 +61,8 @@
 <script>
   window.addEventListener('keydown', function(e) {
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    if(!audio) return; // stop function
+    if(!audio) return; // stop function if there is no audio
+    audio.currentTime = 0; // at every key press, rewind audio to 00:00. 
     
     audio.play();
   })
